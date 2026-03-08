@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PlantCare AI - Analysis Complete (Healthy)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/pages.css') }}"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <a class="logo" href="{{ url_for('index') }}">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-12 9 0 0 2-8 7-8z"/></svg>
+    </div>
+    PlantCare AI
+  </a>
+  <div class="nav-links">
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('upload') }}" class="btn-nav">New Analysis</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="result-main">
+  <div class="page-title">
+    <h1>Analysis Complete</h1>
+    <p>Here's what we found</p>
+  </div>
+
+  <div class="result-layout">
+    <!-- UPLOADED IMAGE -->
+    <div class="uploaded-card">
+      <h3>Uploaded Image</h3>
+      <div class="leaf-placeholder">
+        {% if image_path %}
+        <img src="{{ url_for('static', filename=image_path) }}" alt="Uploaded Plant" style="max-width: 100%; max-height: 200px; object-fit: contain;"/>
+        {% else %}
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#5a7a5a" stroke-width="1.2">
+          <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-12 9"/>
+        </svg>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- RESULT CARD -->
+    <div class="result-card success">
+      <div class="text-center">
+        <div class="status-badge success">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          HEALTHY PLANT
+        </div>
+        <div class="status-icon success">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Plant Type</div>
+        <div class="info-value">{{ prediction.plant_type }}</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Condition</div>
+        <div class="info-value healthy">{{ prediction.condition }}</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Confidence</div>
+        <div class="info-value">{{ "%.1f"|format(prediction.confidence) }}%</div>
+      </div>
+
+      <div class="rec-box success">
+        <h4>🌿 Keep Your Plant Healthy</h4>
+        <ul>
+          <li>Continue regular watering and care</li>
+          <li>Ensure adequate sunlight and nutrients</li>
+          <li>Monitor for any changes in appearance</li>
+          <li>Maintain good air circulation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTION BUTTONS -->
+  <div class="action-btns">
+    <a href="{{ url_for('upload') }}" class="btn-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      Analyse Another Image
+    </a>
+    <a href="{{ url_for('index') }}" class="btn-outline">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Back to Home
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-brand">
+    <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-12 9 0 0 2-8 7-8z"/></svg>
+    Smart Bridge Hyderabad
+  </div>
+  <p>Empowering agriculture through innovative AI solutions</p>
+  <p>© 2025 Smart Bridge Hyderabad. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+

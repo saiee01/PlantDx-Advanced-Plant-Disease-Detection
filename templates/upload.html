@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PlantCare AI - Upload Image</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/pages.css') }}"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <a class="logo" href="{{ url_for('index') }}">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-12 9 0 0 2-8 7-8z"/></svg>
+    </div>
+    PlantCare AI
+  </a>
+  <div class="nav-links">
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('upload') }}" class="btn-primary">Get Started</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="page-content">
+  <div class="page-title">
+    <h1>Upload Plant Image</h1>
+    <p>Take or upload a clear photo of the affected plant leaf</p>
+  </div>
+
+  <!-- Upload Form -->
+  <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+    <!-- UPLOAD AREA -->
+    <div class="upload-card" id="dropZone">
+      <div class="upload-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+      </div>
+      <h2>Drag &amp; Drop Image Here</h2>
+      <p class="or-text">or click to browse from your device</p>
+      <label for="fileInput" class="btn-primary" style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        Choose Image
+      </label>
+      <input type="file" id="fileInput" name="file" accept=".jpg,.jpeg,.png" onchange="handleFile(event)" style="display: none;" required />
+      <p class="formats">Supported formats: JPG, JPEG, PNG, Max 10MB</p>
+    </div>
+
+    <!-- PREVIEW -->
+    <div class="preview-area" id="previewArea" style="display: none;">
+      <img id="previewImg" src="" alt="Preview"/>
+      <p id="previewName"></p>
+      <button type="submit" class="btn-primary" style="margin-top: 14px; display: inline-flex; cursor: pointer; border: none; font-size: inherit;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Analyze Image
+      </button>
+    </div>
+  </form>
+
+  <!-- TIPS -->
+  <div class="tips-card">
+    <h3>📷 Tips for Best Results</h3>
+    <div class="tips-grid">
+      <div class="tip-item"><span class="tip-check">✓</span> Take photos in good lighting</div>
+      <div class="tip-item"><span class="tip-check">✓</span> Focus on the affected leaf area</div>
+      <div class="tip-item"><span class="tip-check">✓</span> Keep the camera steady</div>
+      <div class="tip-item"><span class="tip-check">✓</span> Avoid blurry images</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-brand">
+    <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-12 9 0 0 2-8 7-8z"/></svg>
+    Smart Bridge Hyderabad
+  </div>
+  <p>Empowering agriculture through innovative AI solutions</p>
+  <p>© 2025 Smart Bridge Hyderabad. All rights reserved.</p>
+</footer>
+
+<script>
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('fileInput');
+
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.classList.add('drag-over');
+  });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+  dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file) {
+      fileInput.files = e.dataTransfer.files;
+      showPreview(file);
+    }
+  });
+
+  dropZone.addEventListener('click', () => {
+    fileInput.click();
+  });
+
+  function handleFile(e) {
+    const file = e.target.files[0];
+    if (file) showPreview(file);
+  }
+
+  function showPreview(file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      document.getElementById('previewImg').src = e.target.result;
+      document.getElementById('previewName').textContent = file.name;
+      document.getElementById('previewArea').style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  }
+</script>
+
+</body>
+</html>
+
