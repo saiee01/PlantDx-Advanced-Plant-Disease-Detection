@@ -1,0 +1,727 @@
+/* ========================================
+   PlantCare AI - Page Specific Styles
+   ======================================== */
+
+/* ========================================
+   Home Page - Hero Section
+   ======================================== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 70px 60px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  max-width: 480px;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero-text h1 span {
+  color: var(--green);
+}
+
+.hero-text p {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.hero-img {
+  width: 340px;
+  height: 220px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-img-placeholder {
+  width: 340px;
+  height: 220px;
+  border-radius: 18px;
+  background: var(--green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================================
+   Home Page - Why Section
+   ======================================== */
+.why-section {
+  background: var(--bg);
+  padding: 60px 60px;
+  text-align: center;
+}
+
+.why-section h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 36px;
+}
+
+.cards-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   Home Page - Stats Section
+   ======================================== */
+.stats-section {
+  background: var(--white);
+  padding: 50px 60px;
+}
+
+.stats-inner {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stat-num {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--green);
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+/* ========================================
+   Home Page - CTA Banner
+   ======================================== */
+.cta-banner {
+  background: var(--green);
+  padding: 60px;
+  text-align: center;
+}
+
+.cta-banner h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.cta-banner p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 24px;
+}
+
+/* ========================================
+   Home Page - About Section
+   ======================================== */
+.about-section {
+  padding: 50px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.about-section p {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  max-width: 700px;
+}
+
+/* ========================================
+   Home Page - Benefits
+   ======================================== */
+.benefits-section {
+  padding: 50px 60px;
+  background: var(--bg);
+}
+
+.benefits-section h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.benefits-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.benefit-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 20px;
+  min-width: 180px;
+  flex: 1;
+}
+
+.benefit-emoji {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.benefit-card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.benefit-card p {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ========================================
+   Home Page - Try Section
+   ======================================== */
+.try-section {
+  padding: 40px 60px;
+}
+
+.try-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.try-section p {
+  font-size: 13px;
+  color: var(--text-mid);
+  margin-bottom: 16px;
+}
+
+/* ========================================
+   About Page - Header
+   ======================================== */
+.page-header {
+  text-align: center;
+  padding: 60px 60px 40px;
+}
+
+.page-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.page-header p {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+/* ========================================
+   About Page - Mission
+   ======================================== */
+.mission-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 30px 60px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mission-text {
+  flex: 1;
+}
+
+.mission-text h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.mission-text p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.mission-visual {
+  width: 280px;
+  min-width: 280px;
+  height: 200px;
+  background: var(--green-light);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================================
+   About Page - How It Works
+   ======================================== */
+.how-section {
+  background: var(--bg);
+  padding: 60px;
+}
+
+.how-section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 36px;
+}
+
+.steps-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.step-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 24px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.step-number {
+  width: 34px;
+  height: 34px;
+  background: var(--green);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.step-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.step-card p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ========================================
+   About Page - Model Section
+   ======================================== */
+.model-section {
+  padding: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.model-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 40px;
+  text-align: center;
+}
+
+.model-card h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.model-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  text-align: left;
+}
+
+.model-item h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+
+.model-item p {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+/* ========================================
+   Upload Page - Main
+   ======================================== */
+.page-content {
+  padding: 60px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-title h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.page-title p {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+/* ========================================
+   Upload Page - Upload Area
+   ======================================== */
+.upload-card {
+  background: white;
+  border: 2px dashed var(--border);
+  border-radius: 18px;
+  padding: 60px 40px;
+  text-align: center;
+  margin-bottom: 28px;
+  transition: border-color 0.25s, background 0.25s;
+  cursor: pointer;
+}
+
+.upload-card:hover,
+.upload-card.drag-over {
+  border-color: var(--green);
+  background: var(--green-light);
+}
+
+.upload-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-icon svg {
+  width: 52px;
+  height: 52px;
+  stroke: var(--green);
+}
+
+.upload-card h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.upload-card .or-text {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 18px;
+}
+
+.upload-card .formats {
+  font-size: 11px;
+  color: var(--text-light);
+  margin-top: 16px;
+}
+
+#fileInput {
+  display: none;
+}
+
+/* ========================================
+   Upload Page - Preview
+   ======================================== */
+.preview-area {
+  display: none;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.preview-area img {
+  max-width: 300px;
+  max-height: 220px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.preview-area p {
+  font-size: 13px;
+  color: var(--text-mid);
+  margin-top: 10px;
+}
+
+/* ========================================
+   Upload Page - Tips
+   ======================================== */
+.tips-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 30px 36px;
+}
+
+.tips-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-mid);
+}
+
+.tip-check {
+  color: var(--green);
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ========================================
+   Result Page - Main Layout
+   ======================================== */
+.result-main {
+  padding: 50px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.result-layout {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+/* ========================================
+   Result Page - Uploaded Card
+   ======================================== */
+.uploaded-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  min-width: 220px;
+}
+
+.uploaded-card h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.leaf-placeholder {
+  width: 180px;
+  height: 170px;
+  border-radius: 10px;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ========================================
+   Result Page - Result Card
+   ======================================== */
+.result-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  flex: 1;
+}
+
+.result-card.warning {
+  border: 2px solid var(--red-border);
+}
+
+.result-card.success {
+  border: 2px solid var(--green);
+}
+
+.status-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px;
+}
+
+.status-icon.warning {
+  border: 2.5px solid var(--red);
+}
+
+.status-icon.success {
+  border: 2.5px solid var(--green);
+}
+
+.status-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.status-icon.warning svg {
+  stroke: var(--red);
+}
+
+.status-icon.success svg {
+  stroke: var(--green);
+}
+
+/* ========================================
+   Result Page - Action Buttons
+   ======================================== */
+.action-btns {
+  display: flex;
+  gap: 14px;
+  margin-top: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ========================================
+   Responsive Styles
+   ======================================== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 20px;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+  .hero-img,
+  .hero-img-placeholder {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    aspect-ratio: 340 / 220;
+  }
+
+  .why-section,
+  .stats-section,
+  .cta-banner,
+  .about-section,
+  .benefits-section,
+  .try-section,
+  .page-content,
+  .result-main {
+    padding: 40px 20px;
+  }
+
+  .mission-section {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .mission-visual {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .how-section {
+    padding: 40px 20px;
+  }
+
+  .steps-row {
+    flex-direction: column;
+  }
+
+  .model-section {
+    padding: 40px 20px;
+  }
+
+  .model-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-layout {
+    flex-direction: column;
+  }
+
+  .uploaded-card {
+    min-width: 100%;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-inner {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
